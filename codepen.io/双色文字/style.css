@@ -1,0 +1,19 @@
+.halfStyle {
+    position:relative;
+    display:inline-block;
+    font-size:40px; /*  任何宽度都可以 */
+    color: black; /* 任何颜色，或透明 */
+    overflow:hidden;
+    white-space: pre; /* 处理空格 */
+}
+.halfStyle:before {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 50%;
+    content: attr(data-content); /* 伪元素的动态获取内容 */
+    overflow:hidden;
+    color: #f00;
+}
+.fc{font-size:24px;}
