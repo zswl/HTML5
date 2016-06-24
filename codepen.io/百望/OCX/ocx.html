@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ActiveX税控服务器组件调用示例</title>
+    <OBJECT ID=sk CLASSID="clsid:003BD8F2-A6C3-48EF-9B72-ECFD8FC4D49F" codebase="NISEC_SKSCX.ocx#version=1,0,0,1"></OBJECT>
+    <script type="text/javascript" src="ocx.js"></script>
+</head>
+<body bgcolor=#f0f0ff>
+    <!---->
+    <div align="center">
+        <form name=formData>
+            <table border=2 cellspacing=0>
+                <caption><font size=6 color=#0000ff>ActiveX组件调用示例</font>
+                </caption>
+                <br>
+                <tr height=50>
+                    <td width="300" align="center" style="background:yellow;">
+                        <input type="button" value="参数设置" onclick="SetParameter();">
+                    </td>
+                    <td width="300" align="center" style="background:yellow;">
+                        <input type="button" value="税控钥匙信息查询" onclick="KeyQuery();">
+                    </td>
+                    <td width="300" align="center" style="background:yellow;">
+                        <input type="button" value="页边距设置" onclick="setBorder();">
+                    </td>
+                </tr>
+                <tr height=50>
+                    <td width="300" align="center">
+                        <input type="button" value="空白发票未开票号查询" onclick="fpQuery();">
+                    </td>
+                    <td width="300" align="center">
+                        <input type="button" value="发票开具" onclick="fpkj();">
+                    </td>
+                    <td width="300" align="center">
+                        <input type="button" value="发票打印" onclick="fpdy();">
+                    </td>
+                </tr>
+                <tr height=50>
+
+                    <td width="300" align="center">
+                        <input type="button" value="获取监控管理数据" onclick="termi();">
+                    </td>
+                    <td width="300" align="center">
+                        <input type="button" value="发票领购信息核对" onclick="hedui();">
+                    </td>
+                    <td width="300" align="center">
+                        <input type="button" value="领购信息分发" onclick="fenfa();">
+                    </td>
+                </tr>
+                <tr height=50>
+                    <td width="300" align="center">
+                        <input type="button" value="领购信息退回" onclick="back();">
+                    </td>
+                    <td width="300" align="center">
+                        <input type="button" value="空白发票作废" onclick="fpzf();">
+                    </td>
+                    <td width="300" align="center">
+                        <input type="button" value="发票查询" onclick="query();">
+                    </td>
+                </tr>
+                <tr height=50>
+                    <td width="300" align="center" style="background:red;">
+                        <input type="button" value="开票终端查询统计" onclick="tongji();">
+                    </td>
+                    <td width="300" align="center" style="background:red;">
+                        <input type="button" value="红字发票申请与查询" onclick="redInvo();">
+                    </td>
+                </tr>
+                <br>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

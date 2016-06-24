@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>ActiveX组件调用示例
+</title>
+<script type="text/javascript" src="ocx.js"></script>
+<meta charset="utf-8">
+<OBJECT ID=sk
+CLASSID="clsid:003BD8F2-A6C3-48EF-9B72-ECFD8FC4D49F" 
+codebase="NISEC_SKSCX.ocx#version=1,0,0,1">
+</OBJECT>
+
+<script language="javascript">
+!(function SetParameter()
+{
+var sInputInfo = 
+"<?xml version=\"1.0\" encoding=\"gbk\"?>\r\n<business id=\"20001\" comment=\"参数设置\">\r\n<body yylxdm=\"1\">\r\n<servletip>192.168.172.8</servletip>\r\n<servletport>7005</servletport>\r\n<keypwd>88888888</keypwd>\r\n<aqm>547228de4814644d0d4ecccbaaf2aa803fb46f5fccc1e5202301da5f09777b494abbbdbe4be98703d197e4d198f01c8fbf5039120c9abed0d2ff82ccc94327711494296b9a3a4ec4868425510dcad42cdeb702c86629294ef7a82e5221ad37211f74c1ba8c8cbaf8deba6657da70da4ce4beee8a51d99b104353be579923a332b51346d478a0ddf4fad2f43b7233b797ae4d63c22c81c1054d633899cff0a047dc6b7031ff593b0267ead5452b2f3acbe2fb04ee00df1fdf29a87a0a692af3e0426f1d7d5a4b46823cde396718cf30f915c7604166a85dbbcfe0aae33f9e9c51b9c06fd46522e21e19ada41d6e15342480dbe7e80edf9816a6e19bca18970aef</aqm>\r\n</body>\r\n</business>";
+console.log(sInputInfo);
+try
+    {
+ret = sk.Operate(sInputInfo);
+console.log(ret);
+    }
+catch(e)
+    {
+console.log(e.message + ",errno:" + e.number);
+    }	
+})();
+
+function KeyQuery()
+{
+var sInputInfo = "<?xml version=\"1.0\" encoding=\"gbk\"?>\r\n<business id=\"20002\" comment=\"税控钥匙信息查询\">\r\n<body yylxdm=\"1\">\r\n<keypwd>88888888</keypwd>\r\n</body>\r\n</business>";
+console.log(sInputInfo);
+try
+    {
+ret = sk.Operate(sInputInfo);
+	console.log(ret);
+    }
+catch(e)
+    {
+	console.log(e.message + ",errno:" + e.number);
+    }
+}
+function fpQuery(){
+    var sInputInfo = "<?xml version=\"1.0\" encoding=\"gbk\"?>\r\n<business id=\"10004\" comment=\"查询当前未开票号\">\r\n<body yylxdm=\"1\">\r\n<kpzdbs>01001</kpzdbs>\r\n<fplxdm>004</fplxdm>\r\n</body>\r\n</business>";
+console.log(sInputInfo);
+try
+    {
+ret = sk.Operate(sInputInfo);
+    console.log(ret);
+    }
+catch(e)
+    {
+    console.log(e.message + ",errno:" + e.number);
+    }
+}
+</script>
+</head>
+<body bgcolor=#f0f0ff>
+<div align="center">
+<form name=formData>
+<table border=2 cellspacing=0>
+<caption ><font size=6 color=#0000ff>ActiveX组件调用示例</font></caption>
+<br>
+<tr height=50>
+	<td width="300" align="center"><input type="button" value="参数设置" onclick="SetParameter();"></td>
+	<td width="300" align="center"><input type="button" value="税控钥匙信息查询" onclick="KeyQuery();"></td>
+    <td width="300" align="center"><input type="button" value="发票查询" onclick="fpQuery();"></td>
+    <td width="300" align="center"><input type="button" value="发票开具" onclick="fpkj();"></td>
+</tr>
+<tr height=50>
+    <td width="300" align="center"><input type="button" value="发票打印" onclick="fpdy();"></td>
+    <td width="300" align="center"><input type="button" value="发票领购" onclick="fplg();"></td>
+</tr>
+<br>
+</table>
+</form>
+</div>
+</body>
+</html>
